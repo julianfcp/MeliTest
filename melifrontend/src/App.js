@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import {BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import ItemDetails from "./pages/ItemDetails";
+import SearchBar from "./components/ui/SearchBar";
+import SearchResults from "./pages/SearchResults";
+import { QueryContext } from "./hooks/QueryContext";
 
 function App() {
+
+  const [query, setQuery] = useState('')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <QueryContext.Provider value={{query, setQuery}}>
+        <SearchBar />
+        <Routes>
+          <Route exact path="/" element={""}/>
+          <Route path="/items" element={<SearchResults />}/>
+          <Route path="/item/:id" element={<ItemDetails />}/>
+        </Routes>
+        </QueryContext.Provider>
+      </div>
+    </Router>
   );
 }
 
 export default App;
+ 
