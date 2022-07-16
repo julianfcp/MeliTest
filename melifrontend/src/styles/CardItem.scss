@@ -1,0 +1,39 @@
+@import "./constants.scss";
+@import "./colors.scss";
+
+.card-item:before {
+    content : "";
+    position: absolute;
+    left    : $comp-spacing;
+    right: $comp-spacing;
+    bottom  : 0;
+    height  : 1px;
+    width   : inherit;
+    border-bottom: 1px solid $gray-3;
+    border-bottom-width: thin;
+  }
+.card-item {
+    //border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    padding: $grid-spacing;
+    position: relative;
+    z-index : 1;
+    
+
+    &__img{
+        width: 180px;
+        height: 180px;
+        border-radius: 4px;
+        margin-right: $grid-spacing;
+    }
+    &__price-title{
+        //border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        word-wrap: break-word;
+        overflow: hidden;
+        width: (6 * $width-col);
+    }
+    
+}

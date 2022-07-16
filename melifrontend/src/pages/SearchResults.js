@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useContext} from 'react'
+import CardItem from '../components/ui/CardItem';
 import { QueryContext } from '../hooks/QueryContext';
+import "../styles/SearchResults.scss"
 //import useFetch from '../hooks/useFetch';
 
 function SearchResults() {
@@ -10,22 +12,26 @@ function SearchResults() {
   const [items, setItems] = useState({items: []})
 
   useEffect(() => {
-    console.log("cambio input: ", query)
     fetch(`http://localhost:3001/api/items/query/${query}`)
           .then((res) => res.json())
-          .then((data) => setItems(data))
+          .then((data) => {setItems(data); console.log(data)})
           .catch((err) => console.log(err));
+          
   }, [query])
   
 
   return (
-    <div>Results:
+    <div>
 
-    {items && items.items.map((el,index) => {
+    <div className='main-container'>
+    {items && !items.error ? items.items.map((el,index) => {
       return(
-        <li>{el.title}</li>
+       <CardItem key={index} itemProps={el}/>
       )
-    }) }
+    }) : (
+        <h2>Not Found!</h2>
+    ) }
+    </div>
 
 
     </div>

@@ -8,15 +8,20 @@ router.get("/query/:query", async (req, res) => {
     const json = await result.json();
 
     const {results, available_filters} = json;
-    const dataResponse = {
-        author: {
-            name: process.env.AUTHOR_NAME,
-            lastname: process.env.AUTHOR_LASTNAME,
-        },
-        categories: available_filters,
-        items: results, 
+    if(json.error){
+        console.log("error!")
+        res.send({error: "Not Found!"})
+    }else{
+        const dataResponse = {
+            author: {
+                name: process.env.AUTHOR_NAME,
+                lastname: process.env.AUTHOR_LASTNAME,
+            },
+            categories: available_filters,
+            items: results, 
+        }
+        res.send(dataResponse)
     }
-    res.send(dataResponse)
 });
 router.get("/:id", async (req, res) => {
 
@@ -26,28 +31,33 @@ router.get("/:id", async (req, res) => {
     const descRes = await fetch(`${process.env.URL_MELI_API}/items/${req.params.id}/description`)
     const jsonDesc = await descRes.json();
     //const {results, available_filters} = json;
-    
-    const dataResponse = {
-        author: {
-            name: process.env.AUTHOR_NAME,
-            lastname: process.env.AUTHOR_LASTNAME,
-        },
-        item:{
-            id: json.id,
-            title: json.title,
-            price: {
-                currency: json.currency_id,
-                amount: json.price,
-                decimals: "getdecimals Function",
-            }
-        },
-        picture: json.thumbnail,
-        condition: json.condition,
-        free_shipping: json.shipping.free_shipping,
-        sold_quantity: json.sold_quantity,
-        description: jsonDesc.plain_text,
+    if(json.error){
+        console.log("error!")
+        res.send({error: "Not Found!"})
+    }else{
+        const dataResponse = {
+            author: {
+                name: process.env.AUTHOR_NAME,
+                lastname: process.env.AUTHOR_LASTNAME,
+            },
+            item:{
+                id: json.id,
+                title: json.title,
+                price: {
+                    currency: json.currency_id,
+                    amount: json.price,
+                    decimals: "getdecimals Function",
+                }
+            },
+            picture: json.thumbnail,
+            condition: json.condition,
+            free_shipping: json.shipping.free_shipping,
+            sold_quantity: json.sold_quantity,
+            description: jsonDesc.plain_text,
+        }
+        res.send(dataResponse)
     }
-    res.send(dataResponse)
+    
 });
 
 

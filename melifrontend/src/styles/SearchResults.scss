@@ -1,0 +1,13 @@
+@import "./colors.scss";
+@import "./constants.scss";
+
+.main-container {
+    margin: $grid-spacing $width-col $grid-spacing $width-col;
+    height: fit-content;
+    background-color: $white;
+    
+    h2{
+        display: flex;
+        justify-content: center;
+    }
+}
