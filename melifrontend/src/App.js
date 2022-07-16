@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import ItemDetails from "./pages/ItemDetails";
 import SearchBar from "./components/ui/SearchBar";
@@ -6,8 +6,12 @@ import SearchResults from "./pages/SearchResults";
 import { QueryContext } from "./hooks/QueryContext";
 
 function App() {
-
   const [query, setQuery] = useState('')
+
+  useEffect(() => {
+      const urlParams = new URLSearchParams(window.location.search);
+      setQuery(urlParams.get('search'));    
+  }, [])
 
   return (
     <Router>

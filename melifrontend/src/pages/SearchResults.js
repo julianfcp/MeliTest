@@ -2,20 +2,19 @@ import React, { useState, useEffect, useContext} from 'react'
 import CardItem from '../components/ui/CardItem';
 import { QueryContext } from '../hooks/QueryContext';
 import "../styles/SearchResults.scss"
-//import useFetch from '../hooks/useFetch';
 
 function SearchResults() {
-  /* const urlParams = new URLSearchParams(window.location.search);
-  const query2 = urlParams.get('search')
-  const [items] = useFetch(`http://localhost:3001/api/items/query/${query2}`) */
   const {query} = useContext(QueryContext);
   const [items, setItems] = useState({items: []})
-
+  
   useEffect(() => {
-    fetch(`http://localhost:3001/api/items/query/${query}`)
-          .then((res) => res.json())
-          .then((data) => {setItems(data); console.log(data)})
-          .catch((err) => console.log(err));
+    const fetchData = async () => {
+      await fetch(process.env.REACT_APP_BACKEND_URL + process.env.REACT_APP_BACKEND_SEARCH + query)
+      .then((res) => res.json())
+      .then((data) => {setItems(data); console.log(data)})
+      .catch((err) => console.log(err));
+    }
+    fetchData();
           
   }, [query])
   

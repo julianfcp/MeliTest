@@ -8,7 +8,7 @@ function CardItem(props) {
   const {price, title, thumbnail} = props.itemProps;
   return (
     <div className="card-item">
-      <img className="card-item__img" src={thumbnail} alt="item-image"/>
+      <img className="card-item__img" src={thumbnail} alt="item"/>
       <div className='card-item__price-title'>
         <ItemPrice price={price}/>
         <ItemTitle title={title} />
@@ -20,4 +20,4 @@ function CardItem(props) {
   )
 }
 
-export default CardItem
+export default CardItem;
