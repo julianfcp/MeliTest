@@ -1,6 +1,10 @@
 @import "../constants.scss";
+@import "../colors.scss";
 
 .item-price {
     margin-top: $grid-spacing;
     font-size: 24px;
+    img {
+        margin-left: $grid-spacing;
+    }
 }

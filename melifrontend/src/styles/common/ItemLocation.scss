@@ -1,0 +1,10 @@
+@import "../constants.scss";
+@import "../colors.scss";
+
+.item-location {
+    margin-top: $comp-spacing;
+    font-size: 12px;
+    margin-left: 2* $comp-spacing;
+    color: $gray-2
+   
+}

@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import "../../styles/common/ItemLocation.scss"
 
-function ItemLocation() {
+function ItemLocation({location}) {
   return (
-    <div>ItemLocation</div>
+    <div className='item-location'>{location}</div>
   )
 }
 

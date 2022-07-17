@@ -49,7 +49,7 @@ router.get("/:id", async (req, res) => {
                     decimals: "getdecimals Function",
                 }
             },
-            picture: json.thumbnail,
+            picture: json.pictures[0].url,
             condition: json.condition,
             free_shipping: json.shipping.free_shipping,
             sold_quantity: json.sold_quantity,

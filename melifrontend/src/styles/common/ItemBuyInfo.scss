@@ -1,0 +1,11 @@
+@import "../constants.scss";
+@import "../colors.scss";
+
+.item-info {
+    border: 1px solid black;
+    padding-top: $comp-spacing;
+    width:  8 * $comp-spacing;
+    right: 0px;
+    color: $gray-2;
+   
+}

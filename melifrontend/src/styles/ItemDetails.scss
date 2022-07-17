@@ -1,0 +1,22 @@
+@import "../styles/constants.scss";
+@import "../styles/colors.scss";
+
+.item-Details {
+    margin: $grid-spacing $width-col $grid-spacing $width-col;
+    height: fit-content;
+    background-color: $white;
+
+    &__img-price {
+        border: 1px solid red;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        img {
+            width: 300px;
+            margin-left: $comp-spacing;
+            border: 1px solid black;
+        }
+    }
+
+}
