@@ -7,7 +7,6 @@ import "../styles/ItemDetails.scss"
 
 function ItemDetails() {
     const { id } = useParams();
-    
     const [items] = useFetch(process.env.REACT_APP_BACKEND_URL + process.env.REACT_APP_BACKEND_ITEM + id);
     
   if(items){
