@@ -2,7 +2,8 @@
 @import "./constants.scss";
 
 .main-container {
-    margin: $grid-spacing $width-col $grid-spacing $width-col;
+    margin: $grid-spacing auto;
+    max-width: 920px;
     height: fit-content;
     background-color: $white;
     

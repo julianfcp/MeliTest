@@ -2,20 +2,20 @@
 @import "../styles/colors.scss";
 
 .item-Details {
-    margin: $grid-spacing $width-col $grid-spacing $width-col;
+    margin: $grid-spacing auto;
+    max-width: 920px;
     height: fit-content;
     background-color: $white;
 
     &__img-price {
-        border: 1px solid red;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content:space-around;
 
         img {
-            width: 300px;
+            width: 680px;
             margin-left: $comp-spacing;
-            border: 1px solid black;
+            margin-top: $comp-spacing;
         }
     }
 

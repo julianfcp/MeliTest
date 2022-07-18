@@ -2,10 +2,34 @@
 @import "../colors.scss";
 
 .item-info {
-    border: 1px solid black;
     padding-top: $comp-spacing;
     width:  8 * $comp-spacing;
-    right: 0px;
-    color: $gray-2;
-   
+    right: $comp-spacing;
+    color: $black;
+    display: flex;
+    flex-direction: column;
+    
+    
+    &__condition {
+        font-size: 14px;
+        width: 100%;
+    }
+    &__title {
+        margin-top: $grid-spacing;
+        font-size: 24px;
+    }
+    &__price{
+        margin-top: $comp-spacing;
+        font-size: 46px;
+    }
+    button {
+        margin-top: $comp-spacing;
+        margin-right: $comp-spacing;
+        background-color: $blue;
+        border: none;
+        height: 36px;
+        color: $white;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 }

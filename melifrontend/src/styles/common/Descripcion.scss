@@ -1,0 +1,14 @@
+@import "../constants.scss";
+@import "../colors.scss";
+
+.item-description {
+    margin-top: $comp-spacing;
+    margin-left: $comp-spacing;
+    width: 680px;
+    p{
+        margin-top: $comp-spacing;
+        margin-bottom: $comp-spacing;
+        color: $gray-2;
+        text-align: justify;
+    }
+}

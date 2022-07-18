@@ -1,0 +1,9 @@
+@import "./constants.scss";
+@import "./colors.scss";
+
+.breadcrumbs {
+    margin: $grid-spacing auto;
+    max-width: 920px;
+    height: fit-content;
+    color: $gray-2;
+}
