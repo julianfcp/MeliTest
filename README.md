@@ -67,10 +67,12 @@ Aqui encontraras la siguiente vista:
 To start watch mode, just do:
 
 ```bash
-yarn test
+npm run test
 ```
 
-It is suggested that you keep your terminal opened while in watch mode. As you edit your code, your tests will be automatically re-run. Look at the terminal for more instructions on the watch mode usage.
+Por lo menos el ambiente Backend debera estar corriendo, ya que se emplearon mocks para verificar que la API esta funcionando.
+
+![Screen Shot 2022-07-18 at 4 53 39 PM](https://user-images.githubusercontent.com/8947334/179623926-f3eebe05-2da2-4816-8a35-be56ef45884f.png)
 
 
 
